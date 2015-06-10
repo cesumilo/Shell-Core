@@ -162,23 +162,30 @@ There are many other variables in this structures to manage the stream between t
 
     How to know if it's my module that the user is calling ?
 
-> if (pack->ac >= 1 && !pack->av && str_cmp(pack->av[0], "cmd") == EQUAL)
+```c
+if (pack->ac >= 1 && !pack->av && str_cmp(pack->av[0], "cmd") == EQUAL)
+```
 
    This is very simple to understand. First we need to verify if the "av" array has arguments. If it doesn't have any arguments you must tell to the core "It's not my job!".
 
    If you have the function **manage\_return** in your module you must use this line:
-> pack->err = ERR\_NOT\_FOUND;
+```c
+pack->err = ERR\_NOT\_FOUND;
+```
 
   If you don't have **manage\_return**, you can do this:
-> return ((pack->err = ERR\_NOT\_FOUND));
+```c
+return ((pack->err = ERR\_NOT\_FOUND));
+```
 
   Then, if there are arguments in the array, you want to check if the first argument is your command line. In this case, we use our own function *str\_cmp* (see tools.h) but you can do it by an other way.
 
   **IMPORTANT** : You must tell something to the core by the **err** variable ! In all cases !
 
   If it contains your command line you must say "Ok! It's my job !" :
-> pack->err = ERR_FOUND;
-
+```c
+pack->err = ERR_FOUND;
+```
 
 ----
 
