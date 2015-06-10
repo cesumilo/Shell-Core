@@ -11,7 +11,8 @@ A module is built into a shared library. Then, the core loads all the modules wh
 First, you can build your own shell like "bash" with your modules. At the beginning, it provides nothing except the "manager" and the "exit" command. Even if there are no modules in the directory (or no directory), the shell still start. You can quit with the shortcut "CTRL+D".
 
 ## A little example:
-```
+
+```c
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -89,7 +90,7 @@ As you can see in the code above, we have several functions to make the module a
 
 The first data structure that you will learn about is **t\_mod\_pack**.
 
-```
+```c
 typedef struct		s_module_packet
 {
   char			id;
