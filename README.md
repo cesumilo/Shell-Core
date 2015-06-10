@@ -114,6 +114,8 @@ As you can see in the code above, we have several functions to make the module a
 1. *fork* : duplicate the running process (see man fork).
 2. *waitpid* : placed in the parent process, it waits the son process (see man waitpid).
 
+**IMPORTANT** : The order of functions calls is done on purpose ! Please follow this order for the smooth running of things.
+
 ### Data structures:
 
 The first data structure that you will learn about is **t\_mod\_pack**.
