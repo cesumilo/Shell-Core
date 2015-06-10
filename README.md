@@ -170,12 +170,12 @@ if (pack->ac >= 1 && !pack->av && str_cmp(pack->av[0], "cmd") == EQUAL)
 
    If you have the function **manage\_return** in your module you must use this line:
 ```c
-pack->err = ERR\_NOT\_FOUND;
+pack->err = ERR_NOT_FOUND;
 ```
 
-  If you don't have **manage\_return**, you can do this:
+  If you don't have **manage_return**, you can do this:
 ```c
-return ((pack->err = ERR\_NOT\_FOUND));
+return ((pack->err = ERR_NOT_FOUND));
 ```
 
   Then, if there are arguments in the array, you want to check if the first argument is your command line. In this case, we use our own function *str\_cmp* (see tools.h) but you can do it by an other way.
