@@ -15,18 +15,18 @@ First, you can build your own shell like "bash" with your modules. At the beginn
 Here is a list of the shell features:
 
 - Tokens:
-  1. ;
-  2. |
-  3. >
-  4. <
-  5. <<
-  6. >>
-  7. &&
-  8. ||
+  * ;
+  * |
+  * >
+  * <
+  * <<
+  * >>
+  * &&
+  * ||
 - Multiple pipes & redirections.
 - Reverse redirections.
 - Separator:
-  1. " [...] "
+  * " [...] "
 
 ## How to make your module ? (Code):
 
