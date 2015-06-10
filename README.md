@@ -160,7 +160,7 @@ There are many other variables in this structures to manage the stream between t
 
 ----
 
-    How to know if it's my module that the user is calling ?
+- **How to know if it's my module that the user is calling ?**
 
 ```c
 if (pack->ac >= 1 && !pack->av && str_cmp(pack->av[0], "cmd") == EQUAL)
@@ -189,7 +189,7 @@ pack->err = ERR_FOUND;
 
 ----
 
-	How to tell something to the core ?
+- **How to tell something to the core ?**
 
 > pack->err = ??? ;
 
