@@ -214,4 +214,9 @@ if (pack->err == ERR_FREE)
 }
 ```
 
-**IMPORTANT** : You don't have to modify the **err** variable during this process!
+**IMPORTANT** : You don't have to modify the **err** variable during this process! This is why in the example there is :
+
+```c
+else if (pack->err != ERR_FREE)
+    pack->err = ERR_NOT_FOUND;
+```
