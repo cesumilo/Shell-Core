@@ -25,11 +25,15 @@ Here is a list of the shell features:
   * ||
 - Multiple pipes & redirections.
 
-  	  cat << log >> log2
+```bash
+cat << log >> log2
+```
 
 - Reverse redirections.
 
-  	  << log cat >> log2
+```bash
+<< log cat >> log2
+```
 
 - Separator:
   * " [...] "
