@@ -10,7 +10,16 @@ A module is built into a shared library. Then, the core loads all the modules wh
 ## What can you do with this "Shell Core" ?
 First, you can build your own shell like "bash" with your modules. At the beginning, it provides nothing except the "manager" and the "exit" command. Even if there are no modules in the directory (or no directory), the shell still start. You can quit with the shortcut "CTRL+D".
 
-## A little example:
+## What the Shell Core provides ?
+
+Here is a list of the shell features:
+
+- Tokens: ';' '|' '>' '<' '<<' '>>' '&&' '||'
+- Multiple pipes & redirections.
+- Reverse redirections.
+- Separator: '"'
+
+## How to make your module ? (Code):
 
 ```c
 #include <unistd.h>
