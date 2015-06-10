@@ -5,10 +5,10 @@
 ## Login   <robin_f@epitech.eu>
 ## 
 ## Started on  Tue Jun  9 19:50:33 2015 Guillaume ROBIN
-## Last update Wed Jun 10 14:15:25 2015 Guillaume ROBIN
+## Last update Wed Jun 10 15:24:58 2015 Guillaume ROBIN
 ##
 
-CC	= clang
+CC	= gcc
 
 RM	= rm -f
 
@@ -19,28 +19,28 @@ FLAGS	+= -shared -Wl,-soname,$(NAME)
 
 CFLAGS	+= -Werror -Wall -Wextra
 
-CFLAGS	+= -I ./
+CFLAGS	+= -I ./core_src/
 
-SRCS	+= env.c \
-	   env_convert.c \
-	   env_drawing.c \
-	   env_ext.c \
-	   module_pack_1.c \
-	   module_pack_2.c \
-	   module_pack_3.c \
-	   module_pack_4.c
+SRCS	+= core_src/env.c \
+	   core_src/env_convert.c \
+	   core_src/env_drawing.c \
+	   core_src/env_ext.c \
+	   core_src/module_pack_1.c \
+	   core_src/module_pack_2.c \
+	   core_src/module_pack_3.c \
+	   core_src/module_pack_4.c
 
-SRCS	+= tools/error.c \
-	   tools/my_getnbr.c \
-	   tools/put_natural.c \
-	   tools/str_cat.c \
-	   tools/str_contains.c \
-	   tools/string.c \
-	   tools/get_next_line.c \
-	   tools/my_puterr.c \
-	   tools/put_str_fd.c \
-	   tools/str_cmp.c \
-	   tools/str_dup.c
+SRCS	+= core_src/tools/error.c \
+	   core_src/tools/my_getnbr.c \
+	   core_src/tools/put_natural.c \
+	   core_src/tools/str_cat.c \
+	   core_src/tools/str_contains.c \
+	   core_src/tools/string.c \
+	   core_src/tools/get_next_line.c \
+	   core_src/tools/my_puterr.c \
+	   core_src/tools/put_str_fd.c \
+	   core_src/tools/str_cmp.c \
+	   core_src/tools/str_dup.c
 
 # Your files.
 SRCS	+=
