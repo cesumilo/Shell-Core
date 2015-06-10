@@ -106,7 +106,7 @@ As you can see in the code above, we have several functions to make the module a
 4. *redirection_management* : manage redirections in the son process.
 5. *redirection_management_close* : manage redirections in the parent process.
 6. *signal_handler* : manage signals that are given by the son process.
-7. *signal_handler_parent* : manage signals in the parent process. For example if the son send a *SEGSEGV* signal.
+7. *signal_handler_parent* : manage signals in the parent process. For example if the son sends a *SEGSEGV* signal.
 8. *check_signal* : print a message on the *STDOUT* if there is an error.
 
 **System functions : (mandatory for pipes and redirections)**
@@ -198,3 +198,20 @@ pack->err = ERR_FOUND;
    1. **ERR\_FOUND** : tells that your module manage the command line.
    2. **ERR\_NOT\_FOUND** : tells that it's not your job.
    3. **ERROR** : tells "It's my job but there is an error during the execution !" (see const.h)
+
+- **Can the core tell something to you ?**
+
+Yes ! In fact, when the user quit the shell the core will tell you "Ok! It's the end for now! Please free all your static variables (if there is)".
+
+So. When you receive the message **ERR_FREE** by the **err** variable. You must free all your static variables which need to be freed.
+
+```c
+if (pack->err == ERR_FREE)
+{
+    free(...);
+    ...
+    free(...);
+}
+```
+
+**IMPORTANT** : You don't have to modify the **err** variable during this process!
