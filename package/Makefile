@@ -5,7 +5,7 @@
 ## Login   <robin_f@epitech.eu>
 ## 
 ## Started on  Tue Jun  9 19:50:33 2015 Guillaume ROBIN
-## Last update Wed Jun 10 15:24:58 2015 Guillaume ROBIN
+## Last update Thu Jun 11 16:13:19 2015 Guillaume ROBIN
 ##
 
 CC	= gcc
@@ -20,6 +20,9 @@ FLAGS	+= -shared -Wl,-soname,$(NAME)
 CFLAGS	+= -Werror -Wall -Wextra
 
 CFLAGS	+= -I ./core_src/
+
+#Your headers directory.
+CFLAGS	+=
 
 SRCS	+= core_src/env.c \
 	   core_src/env_convert.c \

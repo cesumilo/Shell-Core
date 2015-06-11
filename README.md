@@ -254,6 +254,32 @@ Let's explain a bit :
 ```
 * It provides to you several defines (see const.h).
 
+----
+**How to compile your module ?**
+----
+
+It's very simple ! Just code your module and place the source code and the headers in the "package" directory. Then, fill the "Makefile".
+
+```make
+
+[...]
+
+# Your lib name.
+NAME	= libname.so
+
+[...]
+
+#Your headers directory.
+CFLAGS	+=
+
+[...]
+
+# Your files.
+SRCS	+=
+
+[...]
+```
+
 ## Conclusion
 
 It was a beautiful project ! We thought a lot about the architecture and that allows us to manage our time pretty well. For now, it's your job to make your own shell ! Ask questions or report a bug at the address: *guillaume1.robin@epitech.eu*
