@@ -5,7 +5,7 @@
 ** Login   <robin_f@epitech.eu>
 ** 
 ** Started on  Fri May  8 16:16:17 2015 Guillaume ROBIN
-** Last update Sun May 24 15:24:33 2015 Guillaume ROBIN
+** Last update Thu Jun 11 16:03:04 2015 Guillaume ROBIN
 */
 
 /*
@@ -62,5 +62,7 @@ void	pipe_management_parent(t_mod_pack *packet)
 
 int	manage_return(t_mod_pack *pack)
 {
+  if (pack->err == ERROR)
+    return (ERR_SD_PIPE);
   return (pack->err == ERR_SHUTDOWN ? ERR_SD_PIPE : pack->err);
 }
