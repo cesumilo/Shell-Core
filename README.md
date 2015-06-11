@@ -158,11 +158,11 @@ This is the packet which will travel between the different modules. There are a 
 
 There are many other variables in this structures to manage the stream between the core and the modules. However, I will not describe all the variables. You are invited to see the source code and discover them by yourself. For informations, a lot of these variables are used to manage pipes and redirections.
 
-### We need to go deeper !
+## We need to go deeper !
 
 ----
-
-- **How to know if it's my module that the user is calling ?**
+**How to know if it's my module that the user is calling ?**
+----
 
 ```c
 if (pack->ac >= 1 && !pack->av && str_cmp(pack->av[0], "cmd") == EQUAL)
@@ -190,8 +190,8 @@ pack->err = ERR_FOUND;
 ```
 
 ----
-
-- **How to tell something to the core ?**
+**How to tell something to the core ?**
+----
 
 > pack->err = ??? ;
 
@@ -201,7 +201,9 @@ pack->err = ERR_FOUND;
    2. **ERR\_NOT\_FOUND** : tells that it's not your job.
    3. **ERROR** : tells "It's my job but there is an error during the execution !" (see const.h)
 
-- **Can the core tell something to you ?**
+----
+**Can the core tell something to you ?**
+----
 
 Yes ! In fact, when the user quit the shell the core will tell you "Ok! It's the end for now! Please free all your static variables (if there is)".
 
@@ -222,3 +224,32 @@ if (pack->err == ERR_FREE)
 else if (pack->err != ERR_FREE)
     pack->err = ERR_NOT_FOUND;
 ```
+
+----
+**Can you change the name of the function called "*module_start*" or "*module_name*" ?**
+----
+
+Actually, you can not change those names because the "Core" need to find the symbol of each function in order to run your module and get its name. This is the minimum in order to run a module.
+
+----
+**What do includes ?**
+----
+
+Let's explain a bit :
+
+```c
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+```
+* They are needed by the system calls.
+
+```c
+#include "package.h"
+```
+* This is the minium (with the system calls includes) to create a module.
+
+```c
+#include "const.h"
+```
+* It provides to you several defines (see const.h).
