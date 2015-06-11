@@ -1,5 +1,5 @@
 # Shell-Core
-This project is a part of another project called 42sh. It was made during my first year at Epitech. The goal was to develop a shell on Linux.
+This project is a part of another project called 42sh. It was made during my first year at Epitech. The goal was to develop a shell on Linux. My group was composed of Caroline, Lucien, Quentin and Adrien.
 
 ## What was our organisation ?
 We thought about a modular architecture. The interest was to code a "Core" in order to manage several modules. Each person will be able to code his own module and make everything.
@@ -253,3 +253,7 @@ Let's explain a bit :
 #include "const.h"
 ```
 * It provides to you several defines (see const.h).
+
+## Conclusion
+
+It was a beautiful project ! We thought a lot about the architecture and that allows us to manage our time pretty well. For now, it's your job to make your own shell ! Ask questions or report a bug at the address: *guillaume1.robin@epitech.eu*
