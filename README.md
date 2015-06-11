@@ -73,8 +73,8 @@ int	module_start(t_mod_pack *pack)
       else if (pid > 0)
 	{
 	  signal_handler_parent(pid);
-	  if (waitpid(pid, &status, 0) == -1 && !my_puterr(ERR_WAITPID))
-	    pack->err = ERR_NOT_FOUND;
+	  if (waitpid(pid, &status, 0) == ERROR)
+	    pack->err = my_puterr(ERR_WAITPID);
 	  pipe_management_parent(pack);
 	  redirection_management_close(pack);
 	  if (check_signal(pid, status, packet) == ERROR)
