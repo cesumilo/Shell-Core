@@ -280,6 +280,13 @@ SRCS	+=
 [...]
 ```
 
+Now you just use :
+
+* **make** : compile your module.
+* **make re** : re-compile your module.
+* **make clean** : clean the object files.
+* **make fclean** : clean the objects files and the executable.
+
 ## Conclusion
 
 It was a beautiful project ! We thought a lot about the architecture and that allows us to manage our time pretty well. For now, it's your job to make your own shell ! Ask questions or report a bug at the address: *guillaume1.robin@epitech.eu*
