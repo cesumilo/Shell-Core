@@ -1,8 +1,8 @@
 # Shell-Core
-This project is a part of another project called 42sh. It was made during my first year at Epitech. The goal was to develop a shell on Linux. My group was composed of Caroline, Lucien, Quentin and Adrien.
+This project is a part of another project called "42sh". It was made during my first year at Epitech. The goal was to develop a shell on Linux. My group was composed of Caroline, Lucien, Quentin and Adrien.
 
 ## What was our organisation ?
-We thought about a modular architecture. The interest was to code a "Core" in order to manage several modules. Each person will be able to code his own module and make everything.
+We thought about a modular architecture. The interest was to code a "Core" in order to manage several modules. Each person will be able to code his own module.
 
 ## How we made a module ?
 A module is built into a shared library. Then, the core loads all the modules which are in the "modules" directory.
@@ -12,7 +12,7 @@ First, you can build your own shell like "bash" with your modules. At the beginn
 
 ## What the Shell Core provides ?
 
-Here is a list of the shell features:
+Here is a list of the features:
 
 - Tokens:
   * ;
@@ -89,25 +89,25 @@ int	module_start(t_mod_pack *pack)
 ```
 
 ## Explanations:
-As you can see in the code above, we have several functions to make the module available with the core.
+As you can see in the code above, we have several functions to be compatible with the core.
 
 ### Functions:
 
 **Tools functions : (not mandatory)**
 
-1. *str_cmp* : compare two strings.
-2. *my_puterr* : print a string on the error output.
+1. *str_cmp* : compares two strings.
+2. *my_puterr* : prints a string on the error output.
 
 **Core functions : (make module available with pipes and redirections)**
 
-1. *pipe_management* : manage pipes in the son process.
-2. *pipe_management_parent* : manage pipes in the parent process.
-3. *manage_return* : manage the returned value by the son/parent process.
-4. *redirection_management* : manage redirections in the son process.
-5. *redirection_management_close* : manage redirections in the parent process.
-6. *signal_handler* : manage signals that are given by the son process.
-7. *signal_handler_parent* : manage signals in the parent process. For example if the son sends a *SEGSEGV* signal.
-8. *check_signal* : print a message on the *STDOUT* if there is an error.
+1. *pipe_management* : manages pipes in the son process.
+2. *pipe_management_parent* : manages pipes in the parent process.
+3. *manage_return* : manages the returned value by the son/parent process.
+4. *redirection_management* : manages redirections in the son process.
+5. *redirection_management_close* : manages redirections in the parent process.
+6. *signal_handler* : manages signals that are given by the son process.
+7. *signal_handler_parent* : manages signals in the parent process. For example, the son sends a *SEGSEGV* signal.
+8. *check_signal* : prints a message on the *STDERR* if there is an error.
 
 **System functions : (mandatory for pipes and redirections)**
 
@@ -136,11 +136,11 @@ typedef struct		s_module_packet
 
 ```
 
-This is the packet which will travel between the different modules. There are a lot of informations in it.
+This is the packet that will travel between the different modules. There are a lot of information in it.
 
 > **id** - is the ID of the module.
 
-> **err** - is the variable that tell to the core "Ok! There is no problem!" or "Wait.. Something's wrong."
+> **err** - is a variable that tell to the core "Ok! There is no problem!" or "Wait.. Something's wrong."
 
 > **ac** - is like in the "main" function (called "argc"). It gives you the size of the array called "av".
 
@@ -148,13 +148,13 @@ This is the packet which will travel between the different modules. There are a 
 
 > **env** - is an array which contains all the shell environment.
 
-> **env_list** - is a pointer on a list. It allows you to modify the environment with the given functions (see package).
+> **env_list** - is a pointer on a list. It allows you to modify the environment with the given functions (see env.h).
 
-> **is_alias** - is a bit special. Indeed, if "is\_alias" s value is equal to TRUE (see const.h), you will "free" the **av** array with the function called "cut\_tab\_free" (see package).
+> **is_alias** - is a bit special. Indeed, if "is\_alias" s value is equal to TRUE (see const.h), you will "free" the **av** array with the function called "cut\_tab\_free" (see package.h).
 
 > **data** - is a variable that contains by default an array of **t_module** given by the core.
 
-> **jobs** - contains all the process that have been paused by the user (see package). It allows you to create a module in order to manage process.
+> **jobs** - contains all the process that have been paused by the user (see package.h). It allows you to create a module in order to manage process.
 
 There are many other variables in this structures to manage the stream between the core and the modules. However, I will not describe all the variables. You are invited to see the source code and discover them by yourself. For informations, a lot of these variables are used to manage pipes and redirections.
 
