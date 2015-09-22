@@ -1,5 +1,5 @@
 # Shell-Core
-This project is a part of another project called "42sh". It was made during my first year at Epitech. The goal was to develop a shell on Linux. My group was composed of Caroline, Lucien, Quentin and Adrien.
+This project is a part of another project called "42sh". It was made during my first year at Epitech. The goal was to develop a shell on Linux. My group was composed of Caroline Perez, Lucien Perouze, Quentin Rochefort and Adrien Van Noort.
 
 ## What was our organisation ?
 We thought about a modular architecture. The interest was to code a "Core" in order to manage several modules. Each person will be able to code his own module.
